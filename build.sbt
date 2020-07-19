@@ -11,5 +11,7 @@ lazy val spark = (project in file("spark"))
 lazy val kafka = (project in file("kafka"))
   .settings(
     name := "Kafka-Code",
-    version := "0.1"
+    version := "0.1",
+
+    libraryDependencies += "com.danielasfregola" %% "twitter4s" % "6.2"
   )
