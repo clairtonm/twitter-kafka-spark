@@ -13,5 +13,6 @@ lazy val kafka = (project in file("kafka"))
     name := "Kafka-Code",
     version := "0.1",
 
-    libraryDependencies += "com.danielasfregola" %% "twitter4s" % "6.2"
+    libraryDependencies += "com.danielasfregola" %% "twitter4s" % "6.2",
+    libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
   )

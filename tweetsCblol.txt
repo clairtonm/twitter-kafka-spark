@@ -1,0 +1,4 @@
+{user_screen_name: 'Schaeppi'user_name: 'Schaeppi',user_verified: 'true',country_code: 'Country Code Not Found!',country: 'Country Not Found!',text: 'Que final de semana de #CBLoL !
+Pode procurar nos tweets antigos, eu AVISEI q ia ser loko!
+
+É 100% qdo eu acordo ce… https://t.co/b65nOULsXZ',retweet_count: 0,favorite_count: 0}
