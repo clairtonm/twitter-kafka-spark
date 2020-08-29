@@ -11,7 +11,8 @@ object KafkaApp extends App with LazyLogging {
 
   def main(): Unit ={
 
-    // Tokens)
+    val consumerToken = new ConsumerToken("oljfafa14fqd", "asdfafa f")
+    val accessToken = new AccessToken("asdf134123412a", "adfadfa")
 
     val restClient = TwitterRestClient(consumerToken, accessToken)
 
@@ -82,7 +83,7 @@ object KafkaApp extends App with LazyLogging {
       }
     }
 
-    def searchTweets(query: String, maxId: Option[Long] = None): Future[Seq[Tweet]] ={
+    def searchTweets(query: String, maxId: Option[Long] = None): Future[Seq[Tweet]] = {
       def extractNextMaxId(params: Option[String]): Option[Long] = {
         //example: "?max_id=658200158442790911&q=%23scala&include_entities=1&result_type=mixed"
         params.getOrElse("").split("&").find(_.contains("max_id")).map(_.split("=")(1).toLong)
@@ -100,7 +101,7 @@ object KafkaApp extends App with LazyLogging {
           else Future(tweets.sortBy((_.created_at)))
         } recover { case _ => Seq.empty}
       }
-      }
+    }
 
     searchTweets(query).map { tweets =>
       tweets.map(tweet => printAndSaveTwitter(tweet))
