@@ -1,3 +1,0 @@
-object SparkApp extends App {
-
-}

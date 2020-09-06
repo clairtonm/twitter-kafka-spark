@@ -22,7 +22,6 @@ object TwitterSimulator extends App {
 
   def producerTweets(topic: String): Unit ={
     val props = new Properties()
-
     props.put("bootstrap.servers", "localhost:9092")
     props.put("ack", "all")
     props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
@@ -31,9 +30,7 @@ object TwitterSimulator extends App {
     val producer = new KafkaProducer[String, String](props)
 
     try {
-
       val lines = getTweets(path)
-
       lines.forEach(line => {
         producer.send(new ProducerRecord[String, String](topic,  "UCL", line))
       })

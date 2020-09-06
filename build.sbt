@@ -5,7 +5,11 @@ ThisBuild / scalaVersion := "2.12.10"
 lazy val spark = (project in file("spark"))
   .settings(
     name := "Spark-Code",
-    version := "0.1"
+    version := "0.1",
+
+    libraryDependencies += "org.apache.spark" %% "spark-core" % "3.0.0",
+    libraryDependencies += "org.apache.spark" %% "spark-streaming" % "3.0.0" % "provided",
+      libraryDependencies += "org.apache.spark" % "spark-streaming_2.12" % "3.0.0" % "provided"
   )
 
 lazy val kafka = (project in file("kafka"))
