@@ -32,15 +32,14 @@ object TwitterSimulator extends App {
     try {
       val lines = getTweets(path)
       lines.forEach(line => {
+        wait(1000)
         producer.send(new ProducerRecord[String, String](topic,  "UCL", line))
       })
 
     } catch {
       case e: Exception => println(e)
     }
-
     producer.close()
   }
-
   producerTweets(topic)
 }
